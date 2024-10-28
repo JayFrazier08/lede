@@ -8,6 +8,13 @@
 name: OpenWrt-CI-lede
 
 on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'Debugging with tmate'
+        required: false
+        default: 'false'
   schedule:
     - cron: 0 20 * * *
   watch:
